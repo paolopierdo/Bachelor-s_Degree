@@ -187,7 +187,7 @@ NON_4_post <- poLCA(formula,X,nclass=4, graphs = T,
                 probs.start = new.probs.start4, maxiter = 1000000)
 
 
-##nuovidati con mamma e papà
+##nuovidati
 newdata <- c(3,3,1,3,3,2,3,2,1,1,1,2,3,3,3,
              1,1,1,3,3,2,1,2,1,1,2,2,1,3,3)
 new <- matrix(newdata, nrow = 2, ncol = 15, byrow = T)
@@ -195,8 +195,8 @@ colnames(new)<-c ("D1","D2","D3","D4","D5","D6","D7","D8","D9","D10",
                   "D11","D12","D13","D14","D15")
 Xplus <- rbind(X,new)
 Xplus
-mamma_papa <- poLCA (formula, Xplus, nclass = 4, nrep = 10,
+Newpersone <- poLCA (formula, Xplus, nclass = 4, nrep = 10,
                      maxiter = 100000, graphs = T)
-round(mamma_papa$posterior,3)
+round(Newpersone$posterior,3)
 options(max.print = 10000)
-mamma_papa$predclass
+Newpersone$predclass
